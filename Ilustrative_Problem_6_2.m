@@ -1,5 +1,5 @@
 %Problema 6.2
-%Fabiola Marín Rivera
+%Fabiola MarÃ­n Rivera
 %2014086018
 
 
