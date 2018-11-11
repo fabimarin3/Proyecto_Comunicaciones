@@ -9,7 +9,7 @@ n=-(N-1)/2:(N-1)/2;			% the indices for g_T
 for i=1:length(n),
   g_T(i)=0;
   for m=-(N-1)/2:(N-1)/2,
-    g_T(i)=g_T(i)+sqrt(xrc(4*m/(N*T),alpha,T))*exp(j*2*pi*m*n(i)/N);
+    g_T(i)=g_T(i)+sqrt(xrc(4*m/(N*T),alpha,T))*exp(j*2*pi*m*n(i)/N); %Funcion del filtro
     echo off ;
   end;
 end;
@@ -24,6 +24,14 @@ magG_T_in_dB=20*log10(abs(G_T)/max(abs(G_T)));
 % impulse response of the cascade of the transmitter and the receiver filters
 g_R=g_T;
 imp_resp_of_cascade=conv(g_R,g_T);
+
 % Plotting commands follow.
 
-plot(n,g_T); 
+%plot(W/(2*pi),magG_T_in_dB); %Para la respuesta en freq
+
+%stem(g_T); %Resp al impulso del filtro 
+
+%stem(imp_resp_of_cascade); %Resp al impulso del cascada
+
+
+
