@@ -35,4 +35,5 @@ plot(1:N,b1,'-',1:N,b2,'--',1:N-d,c,':') ;
 pause % p=0.99
 
 
-plot(1:N,new_b1,'-',1:N,new_b2,'--',1:N-d,new_c,':') ; 
+plot(1:N,new_b1,'-',1:N,new_b2,'--',1:N-d,new_c,':') ;
+xlabel('n')
