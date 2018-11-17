@@ -20,8 +20,8 @@ echo on ;
 
  figure(1)
  g_T=real(g_T) ; % The imaginary part is due to the finite machine precision
- plot(g_T);
- title('Problema 6.12');
+ stem(g_T);
+ title('Problema 6.14');
  xlabel('n');
  ylabel('Parte real de gT(n)');
  
@@ -32,7 +32,7 @@ echo on ;
 
 YfreqDomain = fft(g_T,8/T); %take the fft of our step funcion, y(t)
 y=abs(YfreqDomain);
-plot(fftshift(y));
+stem(fftshift(y));
 xlabel('fT')
 ylabel('Sv/f)')
-title('Problema 6.12')
+title('Problema 6.14')
