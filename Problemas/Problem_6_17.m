@@ -25,16 +25,19 @@ n2=0:N-1;
 % normalized magnitude response  
 magG_T_in_dB=20*log10(abs(G_T)/max(abs(G_T)));
 % impulse response of the cascade of the transmitter and the receiver filters
-g_R=g_T;
-imp_resp_of_cascade=conv(g_R,g_T);
-[IMP_RESP,W]=freqz(imp_resp_of_cascade,1);
-magIMP_RESP_in_dB=20*log10(abs(IMP_RESP)/max(abs(IMP_RESP)));
+IMP=fft(g_T);
+y=abs(IMP);
+figure (1);
+stem(y);
+stem(fftshift(y));
+
+figure(2)
+
+x = ifft(y);
+stem(fftshift(x));
 
 % Plotting commands follow.
-plot(W/(2*pi),magG_T_in_dB);
-figure (1);
-stem(imp_resp_of_cascade);
-figure (2);
+
 
 
 
